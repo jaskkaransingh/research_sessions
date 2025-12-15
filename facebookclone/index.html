@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook - log in or sign up</title>
+    <link rel="icon" type="image/webp" href="./book.webp">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f2f4f7;
+        }
+
+        .main {
+            display: flex;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            margin-top: -500px;
+        }
+
+        .left-section {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .left-section h2 {
+            font-weight: normal;
+            font-size: 28px;
+            line-height: 34px;
+            margin: 0;
+            margin-top: 20px;
+            color: #1c1e21;
+        }
+
+        .right-section {
+            margin-left: 100px;
+            margin-top: 100px;
+        }
+
+        .login-form {
+            background-color: #ffffff;
+            padding: 45px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            width: 376px;
+            margin-top: 90px;
+        }
+
+        .login-form input {
+            width: 100%;
+            padding: 24px 16px;
+            margin: 6px 0;
+            border: 1px solid #dddfe2;
+            border-radius: 6px;
+            font-size: 17px;
+            box-sizing: border-box;
+        }
+
+        .submit {
+            width: 100%;
+            padding: 20px;
+            background-color:  #165ec9;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .submit:hover{
+            background-color: #1877f2;
+        }
+
+        .login-form a {
+            display: block;
+            text-align: center;
+            margin-top: 16px;
+            color: #1877f2;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .login-form hr {
+            margin: 20px 0;
+            border: none;
+            border-top: 1px solid #dddfe2;
+        }
+
+        .create {
+            width: 60%;
+            padding: 20px 16px;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 19px;
+            font-weight: bold;
+            cursor: pointer;
+            background-color: #42b72a;
+            display: block;
+            margin: 0 auto;
+        }
+        .create:hover{
+            background-color: #36a420;
+        }
+
+        .left-section img {
+            margin-bottom: -50px;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="main">
+        <div class="container">
+            <div class="left-section">
+                <img src="https://static.xx.fbcdn.net/rsrc.php/y1/r/4lCu2zih0ca.svg" width="380px" height="170px" style="margin-left: -40px;" />
+                <h2>Facebook helps you connect and share <br>with the people in your life.</h2>
+            </div>
+            <div class="right-section">
+                <div class="login-form">
+                    <form>
+                        <input type="text" placeholder="Email address or phone number" required><br>
+                        <input type="password" placeholder="Password" required><br>
+                        <button type="submit" class="submit">Log in</button>
+                    </form>
+                    <a href="#">Forgotten password?</a>
+                    <hr>
+                    <button type="button" class="create">Create new account</button>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

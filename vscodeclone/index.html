@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visual Studio Code</title>
+    <link rel="icon" type="image/png" href="./img1.png">
+    <style>
+        :root {
+            --bg-dark: #0f1217;
+            --header-bg: #0f1217;
+            --text-white: #ffffff;
+            --text-gray: #8b949e;
+            --vs-blue: #007acc;
+            --link-blue: #58a6ff;
+            --button-hover: #e6e6e6;
+            --banner-blue: #064e9b;
+            --bgbanner: #0a1529;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: var(--text-white);
+            overflow-x: hidden;
+            background-repeat: no-repeat;
+            background-size:cover;
+            background-attachment: fixed;
+            
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--text-gray);
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--text-white);
+        }
+
+        header {
+            background-color: var(--header-bg);
+            height: 8vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 24px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid #30363d;
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            margin-left: 180px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+            color: var(--text-white);
+            font-size: 22px;
+        }
+
+        .icon {
+            width: 26px;
+            height: 26px;
+            fill: var(--vs-blue);
+            margin-right: 5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-right: 210px
+        }
+
+        
+        .search-bar {
+            background-color: var(--bg-dark);
+            border: 1px solid #30363d;
+            border-radius: 6px;
+            padding: 4px 8px;
+            display: flex;
+            align-items: center;
+            gap: 13px;
+            color: var(--text-gray);
+            font-size: 17px;
+            width: 240px;
+            cursor: text;
+            height: 40px;
+        }
+
+        .search-bar .icon-search {
+            width: 16px;
+            height: 16px;
+            fill: var(--text-gray);
+
+        }
+
+        .search-shortcut {
+            border: 1px solid #30363d;
+
+            padding: 0 4px;
+            font-size: 11px;
+            margin-left: auto;
+        }
+
+        .btn-download-nav {
+            background-color: var(--vs-blue);
+            color: white !important;
+            padding: 6px 16px;
+            border-radius: 4px;
+            font-size: 17px;
+            font-weight: 500;
+        }
+        .btn-download-nav:hover{
+            background-color: #064e9b;
+        }
+
+        .theme-toggle {
+            cursor: pointer;
+            opacity: 0.7;
+        }
+
+        .banner {
+            background-color: var(--bgbanner);
+            text-align: center;
+            font-size: 18px;
+            
+            margin-top: 70px;
+            font-weight: 500;
+            height:6vh;
+            display: flex;
+            flex-direction:row;
+            justify-content: center;
+            align-items: center;
+            gap:8px
+        }
+
+        .banner a {
+            color: var(--link-blue);
+            text-decoration: underline;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 60px 20px 40px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        h1 {
+            line-height: 1.1;
+            font-weight: 700;
+            margin-bottom: 40px;
+            margin-top: -20px;
+            font-size: 84px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            justify-content: center;
+            align-self: center;
+
+        }
+
+        .bg {
+            background-color: #1f2329;
+            height: 160px;
+            border-radius: 10px;;
+            min-width: 300px;
+            width:420px;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-self: center;
+            margin: 0 auto;
+            
+        }
+
+        .btn-main-download {
+            background-color: var(--text-white);
+            color: black !important;
+            font-size: 18px;
+            font-weight: 500;
+            padding: 16px 32px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: background-color 0.2s;
+            width:350px;
+            display: flex;
+            justify-content: center;
+            height:50px
+        }
+        .new:hover{
+            border: 1px solid white;
+            height:70px;
+            width:370px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+        }
+
+
+        .windows-icon {
+            width: 24px;
+            height: 24px;
+        }
+
+        .sub-links {
+            font-size: 14px;
+            color: white;
+        }
+
+        .sub-links a {
+            color: white;
+            text-decoration: underline;
+            font-weight: 600;
+            font-size: 13px;
+        }
+
+        .license-text {
+            font-size: 12px;
+            color: white;
+            margin-top: 10px;
+        }
+
+        .license-text a {
+            text-decoration: underline;
+            color:white;
+            font-weight: 600;
+            font-size: 13px;
+        }
+
+       
+        .hero-image-wrapper {
+            max-width: 80%;
+            margin: 0 auto;
+            position: relative;
+            margin-top: 20px;
+        }
+
+        .hero-screenshot {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+    </style>
+</head>
+
+<body background="./img4.png">
+
+    <header>
+        <div class="nav-left">
+            <a href="#" class="brand">
+                <img src="./img1.png" class="icon">
+                Visual Studio Code
+            </a>
+            <div class="nav-links">
+                <a href="#">Docs</a>
+                <a href="#">Updates</a>
+                <a href="#">Blog</a>
+                <a href="#">API</a>
+                <a href="#">Extensions</a>
+                <a href="#">MCP</a>
+                <a href="#">FAQ</a>
+            </div>
+        </div>
+        <div class="nav-right">
+            <div class="theme-toggle">
+                <img src="theme.png" width="22" height="22">
+            </div>
+
+            <div class="search-bar">
+                <img src="./search.png" class="icon-search">
+                Search Docs
+                <span class="search-shortcut">Ctrl+Shift+P</span>
+            </div>
+
+            <a href="#" class="btn-download-nav">Download</a>
+        </div>
+    </header>
+
+    <div class="banner">
+        <a href="#">Version 1.106</a> is now available! Read about the new features and fixes from October.
+    </div>
+
+    <main class="hero">
+        <h1>The open source<br>AI code editor</h1>
+        <div class="bg">
+            <div class="hero-buttons">
+                <div class="new">
+                <a href="#" class="btn-main-download">
+                    <img src="./img2.png" class="windows-icon">
+                    Download for Windows
+                </a></div>
+
+                <div class="sub-links">
+                    <a href="#">Web</a>, <a href="#">Insiders edition</a>, or <a href="#">other platforms</a>
+                </div>
+            </div>
+            <p class="license-text">
+                By using VS Code, you agree to its <a href="#">license</a> and <a href="#">privacy statement</a>.
+            </p>
+        </div>
+
+        <div class="hero-image-wrapper">
+            <img src="img5.png"
+                alt="VS Code Interface Screenshot" class="hero-screenshot">
+        </div>
+
+    </main>
+
+</body>
+
+</html>
